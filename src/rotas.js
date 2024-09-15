@@ -17,10 +17,6 @@ const login = require('./controladores/login')
 
 const excluirUsuario = require('./controladores/excluirUsuario')
 
-const excluirUsuario = require('./controladores/excluirUsuario')
-
-const excluirUsuario = require('./controladores/excluirUsuario')
-
 const criarTarefa = require('./controladores/criarTarefa')
 const listarTarefas = require('./controladores/listarTarefas')
 const excluirTarefa = require('./controladores/excluirTarefas')
