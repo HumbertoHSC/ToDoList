@@ -1,12 +1,11 @@
 const joi = require('joi')
 
-const schemaCriarTarefas = joi.object({
+const schemaListarTarefas = joi.object({
 
-    id : joi.number().required().messages({
+    id : joi.number().messages({
         'number.base': 'O campo ID deve ser um número!',
-        'any.required': 'O campo ID é obrigatório'
     })
 
 })
 
-module.exports = schemaCriarTarefas
+module.exports = schemaListarTarefas

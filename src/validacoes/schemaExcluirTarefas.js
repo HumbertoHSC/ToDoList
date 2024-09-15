@@ -1,6 +1,6 @@
 const joi = require('joi')
 
-const schemaExcluitTarefas = joi.object({
+const schemaExcluirTarefas = joi.object({
 
     id : joi.number().required().messages({
         'number.base': 'O campo ID deve ser um número!',
@@ -9,4 +9,4 @@ const schemaExcluitTarefas = joi.object({
 
 })
 
-module.exports = schemaExcluitTarefas
+module.exports = schemaExcluirTarefas

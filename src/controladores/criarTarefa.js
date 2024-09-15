@@ -1,6 +1,6 @@
 const pool = require('../conexao')
 
-const criarTarefas = async (req, res) => {
+const criarTarefa = async (req, res) => {
     const { nome, descricao, prioridade = 'Baixa' } = req.body
     const usuario_id = req.userId
 
@@ -18,4 +18,4 @@ const criarTarefas = async (req, res) => {
     }
 }
 
-module.exports = criarTarefas
+module.exports = criarTarefa

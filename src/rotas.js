@@ -14,9 +14,9 @@ const schemaListarTarefas = require('./validacoes/schemaListarTarefas')
 const cadastroUsuario = require('./controladores/cadastroUsuario')
 const login = require('./controladores/login')
 
-const criarTarefa = require('./controladores/criarTarefas')
+const criarTarefa = require('./controladores/criarTarefa')
 const listarTarefas = require('./controladores/listarTarefas')
-const excluirTarefa = require('./controladores/excluirTarefa')
+const excluirTarefa = require('./controladores/excluirTarefas')
 
 rotas.post('/cadastro', validarCorpoReq(schemaUsuario), cadastroUsuario)
 rotas.post('/login', validarCorpoReq(schemaLogin), login)

@@ -11,7 +11,7 @@ const listarTarefas = async (req, res) => {
             query = 'SELECT nome, prioridade, finalizada FROM tarefas WHERE usuario_id = $1'
             params = [idUsuario]
         } else {
-            query = 'SELECT nome, prioridade, finalizada FROM tarefas'
+            query = 'SELECT nome, prioridade, finalizada, id FROM tarefas'
         }
 
         const resultado = await pool.query(query, params)
