@@ -1,6 +1,10 @@
 const express = require('express')
 const rotas = express()
 
+const excluirUsuario = require('./controladores/excluirUsuario')
+
+rotas.delete('/usuario', excluirUsuario)
+
 const autenticacao = require('./intermediarios/autenticacao')
 
 const validarCorpoReq = require('./intermediarios/validarCorpoReq')
