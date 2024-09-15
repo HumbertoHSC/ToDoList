@@ -1,10 +1,6 @@
 const express = require('express')
 const rotas = express()
 
-const excluirTarefa = require('./controladores/excluirTarefa')
-
-rotas.delete('/tarefa', excluirTarefa)
-
 const validarCorpoReq = require('./intermediarios/validarCorpoReq')
 
 const autenticacao = require('./intermediarios/autenticacao')
@@ -17,6 +13,7 @@ const cadastroUsuario = require('./controladores/cadastroUsuario')
 
 const criarTarefa = require('./controladores/criarTarefas')
 const listarTarefas = require('./controladores/listarTarefas')
+const excluirTarefa = require('./controladores/excluirTarefa')
 
 rotas.post('/cadastro', validarCorpoReq(schemaUsuario), cadastroUsuario)
 rotas.post('/login', validarCorpoReq(schemaLogin), login)
@@ -25,5 +22,6 @@ rotas.use(autenticacao)
 
 rotas.post('/tarefa', criarTarefa)
 rotas.get('/tarefa', listarTarefas)
+rotas.delete('/tarefa', excluirTarefa)
 
 module.exports = rotas
