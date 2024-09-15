@@ -6,8 +6,8 @@ const cadastroUsuario = require('./controladores/cadastroUsuario')
 
 const autenticacao = require('./intermediarios/autenticacao')
 
-rotas.post('/login', login)
-rotas.post('/cadastro', cadastroUsuario)
+rotas.post('/cadastro', validarCorpoReq(schemaUsuario), cadastroUsuario)
+rotas.post('/login', validarCorpoReq(schemaLogin), login)
 
 rotas.use(autenticacao)
 
