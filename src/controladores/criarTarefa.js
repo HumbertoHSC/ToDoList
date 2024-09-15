@@ -1,16 +1,20 @@
-const pool = require('../conexao')
+const Tarefa = require('../modelos/tarefa')
 
 const criarTarefa = async (req, res) => {
     const { nome, descricao, prioridade = 'Baixa' } = req.body
     const usuario_id = req.userId
 
     try {
-        const novaTarefa = await pool.query(
-            'INSERT INTO tarefas (nome, descricao, prioridade, usuario_id, finalizada, data_termino) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
-            [nome, descricao, prioridade, usuario_id, false, null]
-        )
+        const novaTarefa = await Tarefa.create({
+            nome,
+            descricao,
+            prioridade,
+            usuario_id,
+            finalizada: false,
+            data_termino: null,
+        })
 
-        return res.status(201).json(novaTarefa.rows[0])
+        return res.status(201).json(novaTarefa)
 
     } catch (error) {
         console.error('Erro ao criar tarefa:', error)

@@ -2,7 +2,7 @@ const joi = require('joi')
 
 const schemaListarTarefas = joi.object({
 
-    id : joi.number().messages({
+    idUsuario : joi.number().messages({
         'number.base': 'O campo ID deve ser um número!',
     })
 
