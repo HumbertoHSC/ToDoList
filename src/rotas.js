@@ -1,6 +1,10 @@
 const express = require('express')
 const rotas = express()
 
+const criarTarefa = require('./controladores/criarTarefas')
+
+rotas.post('/tarefa', criarTarefa)
+
 const validarCorpoReq = require('./intermediarios/validarCorpoReq')
 
 const autenticacao = require('./intermediarios/autenticacao')
