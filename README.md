@@ -1,4 +1,4 @@
-# To Do List - Aplicação Web
+# To Do List
 
 ## Descrição
 
